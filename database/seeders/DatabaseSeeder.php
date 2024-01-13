@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,6 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::create([
+            'name' => 'Md Siddiqur Rahman',
+            'email' => 'imsiddiqur@gmail.com',
+            'password' => \bcrypt('password')
+        ]);
+
         $this->call([
             ExpenseSeeder::class,
         ]);
